@@ -46,6 +46,8 @@ public class contacts extends AppCompatActivity{
         rview.setLayoutManager(new LinearLayoutManager(this));
         rview.setAdapter(cadp);
 
+        
+
     }
     public List<contactvo> getallcontacts()
     {
