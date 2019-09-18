@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tabsactivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sibling_tabs"
+        style="@style/NavigationTabTextAppeareance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F190B1"
+        android:clickable="true"
+        android:clipChildren="false"
+        android:visibility="visible"
+        app:tabIndicatorFullWidth="true"
+        app:tabSelectedTextColor="#D81B60"
+        app:tabTextAppearance="@style/NavigationTabTextAppeareance"
+        app:tabTextColor="#fff"
+        tools:visibility="visible">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:clickable="true"
+            android:text="chat"
+            tools:visibility="visible" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="status" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="calls" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7CE91E63" />
+</LinearLayout>

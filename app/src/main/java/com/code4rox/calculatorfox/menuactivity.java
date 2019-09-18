@@ -16,9 +16,12 @@ public class menuactivity extends AppCompatActivity implements View.OnClickListe
         Button btn_counter=(Button) findViewById(R.id.btn_counter);
         Button btn_cal=(Button) findViewById(R.id.btn_calculator);
         Button btn_contact=(Button) findViewById(R.id.btn_contacts);
+        Button btn_pagerview=(Button) findViewById(R.id.btn_pagerview);
         btn_cal.setOnClickListener(this);
         btn_contact.setOnClickListener(this);
         btn_counter.setOnClickListener(this);
+        btn_pagerview.setOnClickListener(this);
+
     }
     public void onClick(View v) {
         switch (v.getId())
@@ -35,9 +38,10 @@ public class menuactivity extends AppCompatActivity implements View.OnClickListe
                 Intent togo1=new Intent(menuactivity.this,contacts.class);
                 startActivity(togo1);
                 break;
-
-
-
+            case R.id.btn_pagerview:
+                Intent togo2=new Intent(menuactivity.this,Tabsactivity.class);
+                startActivity(togo2);
+                break;
         }
     }
 }

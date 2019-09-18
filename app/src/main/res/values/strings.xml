@@ -3,4 +3,7 @@
     <string name="counter">Your Counter is :</string>
     <string name="counter_title">Counter</string>
     <string name="item_detail">This is detail of this item. A mark of excellence.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

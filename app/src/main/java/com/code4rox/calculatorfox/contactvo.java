@@ -1,11 +1,13 @@
 package com.code4rox.calculatorfox;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 public class contactvo {
     public Bitmap ContactImage;
     public String ContactName;
     public String ContactNumber;
+    public String photoURI;
 
     public Bitmap getContactImage() {
         return ContactImage;
