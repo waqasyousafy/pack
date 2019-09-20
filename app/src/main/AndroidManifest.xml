@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.code4rox.calculatorfox">
+
     <meta-data
         android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-        android:value="true"/>
+        android:value="true" />
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -14,16 +16,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Tabsactivity" />
-        <activity android:name=".menuactivity" />
-        <activity android:name=".contacts" />
-        <activity android:name=".Calculator" />
-        <activity android:name=".Splash_screen">
+        <activity android:name=".Constraintlayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Tabsactivity" />
+        <activity android:name=".menuactivity" />
+        <activity android:name=".contacts" />
+        <activity android:name=".Calculator" />
+        <activity android:name=".Splash_screen">
+
         </activity>
         <activity android:name=".MainActivity" />
 
