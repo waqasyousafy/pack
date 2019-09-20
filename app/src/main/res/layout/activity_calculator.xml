@@ -36,32 +36,33 @@
     android:orientation="vertical">
 
 
-
     <EditText
         android:id="@+id/first_number"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="54dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
-        android:inputType="numberDecimal"
         android:drawableBottom="@android:color/holo_blue_bright"
         android:hint="Enter Numeric Value"
+        android:inputType="numberDecimal"
         android:textSize="15sp" />
 
     <EditText
         android:id="@+id/second_number"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:inputType="numberDecimal"
+        android:layout_height="52dp"
         android:drawableBottom="@android:color/holo_blue_bright"
         android:hint="Enter Numeric Value"
+        android:inputType="numberDecimal"
         android:textSize="15sp" />
 
     <Button
         android:id="@+id/btn_plus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E92064"
         android:text="+"
         android:textColor="#FFF"
         android:textSize="20sp" />
@@ -70,7 +71,8 @@
         android:id="@+id/btn_minus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
+        android:layout_marginBottom="10dp"
+        android:background="#E92064"
         android:text="-"
         android:textColor="#FFF"
         android:textSize="20sp" />
@@ -79,7 +81,8 @@
         android:id="@+id/btn_multiply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
+        android:layout_marginBottom="10dp"
+        android:background="#E92064"
         android:text="X"
         android:textColor="#FFF"
         android:textSize="20sp" />
@@ -88,7 +91,7 @@
         android:id="@+id/btn_divide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
+        android:background="#E92064"
         android:text="/"
         android:textColor="#FFF"
         android:textSize="20sp" />

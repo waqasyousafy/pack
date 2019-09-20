@@ -14,7 +14,7 @@ public class Splash_screen extends AppCompatActivity {
         Thread td=new Thread(){
           public void run(){
               try {
-                  sleep(3000);
+                  sleep(2000);
 
               }catch (Exception ex){
                   ex.printStackTrace();
@@ -23,8 +23,6 @@ public class Splash_screen extends AppCompatActivity {
                   Intent it=new Intent(Splash_screen.this,menuactivity.class);
                   startActivity(it);
                   finish();
-
-
               }
           }
         };td.start();
