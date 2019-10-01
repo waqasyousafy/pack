@@ -82,7 +82,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_digital"
         app:srcCompat="@drawable/clock" />
-
     <TextView
         android:id="@+id/label_speed"
         android:layout_width="88dp"
@@ -122,8 +121,6 @@
             android:id="@+id/btn_cycle"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:background="#2C262626"
             android:drawableLeft="@drawable/cycle"
             android:paddingRight="5dp"
@@ -131,13 +128,11 @@
             android:scrollbarAlwaysDrawVerticalTrack="false"
             android:text="Cycle"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btn_car"
             app:layout_constraintEnd_toStartOf="@+id/btn_car"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/layout_vehicles"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btn_car"
@@ -161,19 +156,15 @@
             android:id="@+id/btn_train"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:background="#2C262626"
             android:drawableLeft="@drawable/train"
             android:paddingRight="5dp"
             android:text="TRAIN"
             android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btn_car"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_car"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@+id/btn_car" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
