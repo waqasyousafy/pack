@@ -10,6 +10,18 @@
     tools:context=".menuactivity">
 
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="282dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center|center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/logo" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -28,159 +40,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="282dp"
-        android:layout_height="212dp"
-        android:layout_marginTop="10dp"
-        android:foregroundGravity="center|center_horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/logo" />
-
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:foregroundGravity="center_horizontal"
-        android:padding="20dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu_list_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/logo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/logo"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.0">
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cart_counter"
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:contentPadding="20dp"
-            app:layout_gravity="center|center_horizontal|center_vertical">
-
-            <Button
-                android:id="@+id/btn_counter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|center_horizontal"
-                android:background="@drawable/round_button"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:text="@string/counter_title"
-                android:textColor="#E92064"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logo" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cart_viewpager"
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:visibility="visible"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:contentPadding="20dp"
-            app:layout_column="1"
-            app:layout_gravity="center|right|center_horizontal|center_vertical"
-            app:layout_row="0">
-
-            <Button
-                android:id="@+id/btn_pagerview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:gravity="center|center_horizontal"
-                android:text="View Pager"
-                android:textColor="#E92064"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="15dp"
-            android:visibility="visible"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:cardPreventCornerOverlap="true"
-            app:contentPadding="20dp"
-            app:layout_column="0"
-            app:layout_gravity="center|right|center_horizontal|center_vertical"
-            app:layout_row="1">
-
-            <Button
-                android:id="@+id/btn_calculator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:gravity="center|center_horizontal|center_vertical"
-                android:text="Calculator"
-                android:textColor="#E92064"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cart_contacts"
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
-            android:visibility="visible"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:contentPadding="20dp"
-            app:layout_column="1"
-            app:layout_gravity="center|right|center_horizontal|center_vertical"
-            app:layout_row="1">
-
-            <Button
-                android:id="@+id/btn_contacts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_button"
-                android:gravity="center|center_horizontal"
-                android:text="Contacts"
-                android:textColor="#E92064"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-
-    </androidx.gridlayout.widget.GridLayout>
-
+        tools:listitem="@layout/menu_item_design"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

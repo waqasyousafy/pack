@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.code4rox.calculatorfox">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -9,15 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".bottom_navigation">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Image_Downloader">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Constraintset_example_paractice_2" />
+        <activity android:name=".MusicPlayer">
+
+        </activity>
+        <activity android:name=".Song_Downloader"></activity>
+        <activity android:name=".bottom_navigation"></activity>
+        <activity android:name=".Constraintset_example_paractice_2"></activity>
         <activity android:name=".constraintset_example_concepts" />
         <activity
             android:name=".constraint_layout_placeholder_example"
@@ -28,23 +33,44 @@
         <activity android:name=".Recyclerview" />
         <activity android:name=".Constraintlayout" />
         <activity android:name=".Tabsactivity" />
-        <activity android:name=".menuactivity" />
-        <activity android:name=".contacts"></activity>
+        <activity android:name=".menuactivity" >
+
+        </activity>
+        <activity android:name=".contacts" />
         <activity android:name=".Calculator" />
-        <activity android:name=".Splash_screen" />
+        <activity android:name=".Splash_screen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name=".NotificationReceiver" />
+
+        <service
+            android:name=".MyIntentService"
+            android:exported="false" />
+        <service
+            android:name=".SongsDownloader"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".Songservice"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name=".MyService" />
+        <service
+            android:name=".BinderService"
+            android:enabled="true" />
     </application>
 
     <meta-data
         android:name="com.google.android.gms.ads.AD_MANAGER_APP"
         android:value="true" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 </manifest>

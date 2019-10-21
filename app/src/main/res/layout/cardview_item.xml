@@ -23,7 +23,7 @@
                 android:layout_height="190dp"
                 android:background="#41000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/book1" />
+                android:src="@drawable/book3" />
 
             <TextView
                 android:id="@+id/book_title_id"

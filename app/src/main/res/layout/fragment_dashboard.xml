@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
-        android:text="notification"
+        android:text="Notification Generator"
         app:layout_constraintEnd_toEndOf="@+id/btn_datepicker"
         app:layout_constraintStart_toStartOf="@+id/btn_datepicker"
         app:layout_constraintTop_toBottomOf="@+id/btn_datepicker" />

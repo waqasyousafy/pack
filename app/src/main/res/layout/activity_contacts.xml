@@ -12,5 +12,7 @@
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp"
+        tools:listitem="@layout/single_contact_view"
+        tools:itemCount="6"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,7 +29,6 @@ public class dumyconstraintlayoutexamplepractice extends AppCompatActivity {
         anim.setInterpolator(new LinearInterpolator());
         anim.setRepeatMode(ValueAnimator.RESTART);
         anim.setRepeatCount(ValueAnimator.INFINITE);
-
         return anim;
     }
 }

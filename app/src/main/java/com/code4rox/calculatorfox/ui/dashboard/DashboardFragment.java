@@ -3,8 +3,11 @@ package com.code4rox.calculatorfox.ui.dashboard;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.NotificationChannel;
+import android.app.NotificationChannelGroup;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +25,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.code4rox.calculatorfox.Calculator;
+import com.code4rox.calculatorfox.NotificationReceiver;
 import com.code4rox.calculatorfox.R;
 
 import java.text.DateFormat;
@@ -73,18 +78,32 @@ int messageCount;
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(root.getContext(), "title")
+                Intent activityintent=new Intent(root.getContext(), Calculator.class);
+                PendingIntent contentIntent=PendingIntent.getActivity(root.getContext(),0,activityintent,0);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(root.getContext(), "Channel_1")
                         .setSmallIcon(R.drawable.logo)
                         .setContentTitle("Dumy Notification")
                         .setContentText("This is dumy notification for testing")
                         .setPriority(NotificationCompat.PRIORITY_MAX)
+                        .setContentIntent(contentIntent)
+                        .addAction(R.drawable.logo,"Toast",contentIntent)
+                        .setAutoCancel(true)
                         .setColorized(true);
                 NotificationManager nm = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    NotificationChannel mChannel = new NotificationChannel("title", "chanel_1", nm.IMPORTANCE_DEFAULT);
+                    NotificationChannelGroup group1=new NotificationChannelGroup(
+                            "Group_1",
+                            "Group_1"
+                    );
+                    NotificationChannel mChannel = new NotificationChannel("Channel_1", "chanel_1", nm.IMPORTANCE_DEFAULT);
+                    NotificationChannel Channel2 = new NotificationChannel("Channel_2", "chanel_2", nm.IMPORTANCE_DEFAULT);
+                    mChannel.setGroup("Group_1");
+                    Channel2.setGroup("Group_1");
                     mChannel.setShowBadge(true);
+                    nm.createNotificationChannelGroup(group1);
                     nm.createNotificationChannel(mChannel);
+                    nm.createNotificationChannel(Channel2);
+
                 }
                 nm.notify(1, builder.build());
             }

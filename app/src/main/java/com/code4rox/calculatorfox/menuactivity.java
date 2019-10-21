@@ -7,41 +7,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class menuactivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class menuactivity extends AppCompatActivity {
+    String[] titles={"Calculator","Image Downloader","Music Player","Bottom Navigation","Chatting Area","Constraint Set","Contacts","Constraint Layout","Services"};
+RecyclerView recyclerView;
+   private List<MenuModel> menulist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuactivity);
-        Button btn_counter=(Button) findViewById(R.id.btn_counter);
-        Button btn_cal=(Button) findViewById(R.id.btn_calculator);
-        Button btn_contact=(Button) findViewById(R.id.btn_contacts);
-        Button btn_pagerview=(Button) findViewById(R.id.btn_pagerview);
-        btn_cal.setOnClickListener(this);
-        btn_contact.setOnClickListener(this);
-        btn_counter.setOnClickListener(this);
-        btn_pagerview.setOnClickListener(this);
+        menulist=new ArrayList<>();
+  for(String title:titles){
+      menulist.add(new MenuModel(title));
+  }
+       recyclerView=(RecyclerView) findViewById(R.id.menu_list_view);
+  recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+       MenuAdapter recyclerviewAdapter=new MenuAdapter(this,menulist);
+       recyclerView.setAdapter(recyclerviewAdapter);
+
 
     }
-    public void onClick(View v) {
-        switch (v.getId())
-        {
-            case R.id.btn_counter:
-                Intent go=new Intent(menuactivity.this,MainActivity.class);
-                startActivity(go);
-                break;
-            case R.id.btn_calculator:
-                Intent togo=new Intent(menuactivity.this,Calculator.class);
-                startActivity(togo);
-                break;
-            case R.id.btn_contacts:
-                Intent togo1=new Intent(menuactivity.this,contacts.class);
-                startActivity(togo1);
-                break;
-            case R.id.btn_pagerview:
-                Intent togo2=new Intent(menuactivity.this,Tabsactivity.class);
-                startActivity(togo2);
-                break;
-        }
     }
-}
+

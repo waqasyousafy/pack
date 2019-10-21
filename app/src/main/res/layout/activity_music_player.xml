@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/music_player_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    tools:context=".MusicPlayer">
+
+    <Button
+        android:id="@+id/btn_music_action"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/pause"
+        android:shadowColor="#7A55571E"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/Current_Song_Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/music_player_background" />
+
+    <TextView
+        android:id="@+id/Current_Song_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="marquee"
+        android:fadeScrollbars="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:text="Song Name"
+        android:fadingEdge="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_music_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

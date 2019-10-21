@@ -27,4 +27,15 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_bottom_navigation">bottom_navigation</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="cd_repeat">Repeat one or all</string>
+    <string name="cd_previous">Skip backwards</string>
+    <string name="cd_play">Play and pause</string>
+    <string name="cd_pause">pause</string>
+    <string name="cd_next">Skip forwards</string>
+    <string name="downloaded">Downloaded</string>
+    <string name="undo_string">undo</string>
 </resources>
