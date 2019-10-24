@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class menuactivity extends AppCompatActivity {
-    String[] titles={"Calculator","Image Downloader","Music Player","Bottom Navigation","Chatting Area","Constraint Set","Contacts","Constraint Layout","Services"};
+    String[] titles={"Calculator","Image Downloader","Music Player","Bottom Navigation","Chatting Area","Constraint Set","Contacts","Constraint Layout","Services","Worker Manager"};
 RecyclerView recyclerView;
    private List<MenuModel> menulist;
     @Override

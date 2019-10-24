@@ -1,5 +1,6 @@
 package com.code4rox.calculatorfox;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -15,6 +16,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -94,9 +96,6 @@ public class BinderService extends Service {
 
         return START_REDELIVER_INTENT;
     }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotification() {
 // Using RemoteViews to bind custom layouts into Notification
         mNotificationManager = (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
@@ -109,20 +108,26 @@ public class BinderService extends Service {
         PendingIntent pplayIntent = PendingIntent.getService(this, 0,
                 playIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.status_bar_play, pplayIntent);
-        builder1 = new NotificationCompat.Builder(this, "Channel1")
+        builder1 = new NotificationCompat.Builder(this, "musicplayer")
                 .setSmallIcon(R.drawable.logo)
                 .setContentTitle("Song Notification")
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setCustomContentView(views)
                 .setAutoCancel(true)
                 .setColorized(true);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            NotificationManager builder = (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
-//            NotificationChannel mChannel = new NotificationChannel("Channel1", "chanel_1", builder.IMPORTANCE_DEFAULT);
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager builder = (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+            NotificationChannel mChannel = new NotificationChannel("musicplayer", "Music Player", builder.IMPORTANCE_DEFAULT);
+
+          try{
+              startForeground(FOREGROUND_SERVICE, builder1.build());
+          } catch (Exception e) {
+              Toast.makeText(getApplicationContext(),"Catch Bloack executed ",Toast.LENGTH_SHORT).show();
+
+          }
+
+        }
         startForeground(FOREGROUND_SERVICE, builder1.build());
-
-
     }
 
     public void updateNotification() {

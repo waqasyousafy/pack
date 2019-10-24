@@ -75,6 +75,10 @@ holder.btn.setOnClickListener(new View.OnClickListener() {
                Intent intent9=new Intent(context,Song_Downloader.class);
                context.startActivity(intent9);
                break;
+           case 9:
+               Intent intent10=new Intent(context,workermanager.class);
+               context.startActivity(intent10);
+               break;
        }
     }
 });

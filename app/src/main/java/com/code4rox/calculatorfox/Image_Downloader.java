@@ -87,7 +87,6 @@ public class Image_Downloader extends AppCompatActivity {
         return false;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotification(){
 
         String CHANNEL_ID="Download_channel";
@@ -98,14 +97,15 @@ public class Image_Downloader extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         int PROGRESS_MAX=100;
         int PROGRESS_CURRENT=0;
-// Issue the initial notification with zero progress
-        builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, true);
-        notificationManager.notify(notificationId, builder.build());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationManager builder = (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
             NotificationChannel mChannel = new NotificationChannel("CHANNEL_ID", "chanel_1", builder.IMPORTANCE_DEFAULT);
             notificationManager.createNotificationChannel(mChannel);
         }
+// Issue the initial notification with zero progress
+        builder.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, true);
+        notificationManager.notify(notificationId, builder.build());
+
 
 // Do the job here that tracks the progress.
 // Usually, this should be in a
@@ -124,9 +124,7 @@ public class Image_Downloader extends AppCompatActivity {
             progressBar.setMax(100);
             progressBar.isIndeterminate();
             progressBar.setVisibility(View.VISIBLE);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 showNotification();
-            }
         }
         @Override
         protected String doInBackground(String... F_url) {
@@ -162,8 +160,6 @@ public class Image_Downloader extends AppCompatActivity {
 
             return null;
         }
-
-        @RequiresApi(api = Build.VERSION_CODES.O)
         protected void onProgressUpdate(Integer... progress) {
             super.onProgressUpdate(progress);
             progressBar.setProgress(progress[0]);
